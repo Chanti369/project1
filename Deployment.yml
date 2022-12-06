@@ -14,7 +14,7 @@ spec:
       spec:
        containers:
         - name: mrdevops
-          image: 7995323158/myecomm1
+          image: 7995323158/shanvitha
           imagePullPolicy: Always
           ports:
           - containerPort: 80
