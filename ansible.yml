@@ -8,6 +8,6 @@
      - name: copy
        copy: src=/home/ec2-user/Service.yml dest=/opt  
      - name: start objects
-       command: kubectl delete -f /opt/Deployment.yml
+       command: kubectl delete -f "/opt/Deployment.yml"
      - name: start object
        command: kubectl delete -f /opt/Service.yml   
