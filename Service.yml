@@ -8,7 +8,7 @@ spec:
   ports:
     - port: 8080                               
       targetPort: 80                    
-      nodePort: 31203
+      nodePort: 31204
   selector:
     app: mrdevops                    
   type: LoadBalancer                   
