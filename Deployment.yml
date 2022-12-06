@@ -14,7 +14,7 @@ spec:
       spec:
        containers:
         - name: mrdevops
-          image: 7995323158/shanvitha
+          image: 7995323158/yummy
           imagePullPolicy: Always
           command: ["/usr/sbin/init"]
           ports:
