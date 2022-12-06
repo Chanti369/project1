@@ -1,5 +1,6 @@
 - hosts: demo
   become: true
+  become_user: ec2-user
   connection: ssh
   tasks: 
      - name: copy files
