@@ -1,5 +1,6 @@
-- hosts: all
+- hosts: demo
   become: true
+  connection: ssh
   tasks: 
      - name: copy files
        copy: src=/home/ec2-user/* dest=/opt
