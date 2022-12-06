@@ -1,6 +1,5 @@
 - hosts: demo
   become: true
-  become_user: root
   connection: ssh
   tasks: 
      - name: copy files
@@ -10,6 +9,6 @@
      - name: chmod
        command: chmod 777 /home/ec2-user/Deployment.yml
      - name: start objects
-       command: kubectl delete -f /home/ec2-user/Deployment.yml
+       command: kubectl apply -f /home/ec2-user/Deployment.yml
      - name: start object
        command: kubectl delete -f /home/ec2-user/Service.yml   
