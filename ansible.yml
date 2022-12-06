@@ -10,6 +10,6 @@
      - name: chmod
        command: chmod 777 /opt/Deployment.yml
      - name: start objects
-       command: kubectl delete -f "/opt/Deployment.yml"
+       command: kubectl delete -f /opt/Deployment.yml
      - name: start object
        command: kubectl delete -f /opt/Service.yml   
