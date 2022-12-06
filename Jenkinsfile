@@ -27,5 +27,16 @@ pipeline{
                 }
             }
         }
+        stage('run ansible'){
+            steps{
+                script{
+                    sshagent(['ssh']) {
+                        sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.7.147'
+                        sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.7.147 cd /home/ec2-user/'
+                        sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.7.147 ansible-playbook ansible.yml'
+                    }
+                }
+            }
+        }
     }
 }

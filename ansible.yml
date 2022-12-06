@@ -1,11 +1,9 @@
 - hosts: all
   become: true
   tasks: 
-     - name: delete old deployment
-       command: kubectl delete -f /home/ubuntu/Deployment.yml
-     - name: delete old service
-       command: kubectl delete -f /home/ubuntu/Service.yml
-     - name: create new deployment
-       command: kubectl apply -f /home/ubuntu/Deployment.yml
-     - name: create new service
-       command: kubectl apply -f /home/ubuntu/Service.yml
+     - name: copy files
+       copy: src=/home/ec2-user/* dest=/opt
+     - name: start objects
+       command: kubectl apply -f Deployment.yml
+     - name: start object
+       command: kubectl apply -f Service.yml    
