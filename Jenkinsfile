@@ -8,5 +8,14 @@ pipeline{
                 }
             }
         }
+        stage('establish ssh'){
+            steps{
+                script{
+                    sshagent(['ssh']) {
+                        sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.7.147'
+                    }
+                }
+            }
+        }
     }
 }
