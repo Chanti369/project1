@@ -23,6 +23,7 @@ pipeline{
                     sshagent(['ssh']) {
                         sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.0.46'
                         sh 'scp /var/lib/jenkins/workspace/p5/* ec2-user@172.31.0.46:/home/ec2-user/'
+                        sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.40.9'
                         sh 'scp /var/lib/jenkins/workspace/p5/* ec2-user@172.31.40.9:/home/ec2-user/'
 
                     }
