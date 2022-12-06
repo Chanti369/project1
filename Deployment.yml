@@ -16,5 +16,6 @@ spec:
         - name: mrdevops
           image: 7995323158/shanvitha
           imagePullPolicy: Always
+          command: ["/usr/sbin/init"]
           ports:
           - containerPort: 80
