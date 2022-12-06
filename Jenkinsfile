@@ -12,7 +12,7 @@ pipeline{
             steps{
                 script{
                     sshagent(['ssh']) {
-                        sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.12.235'
+                        sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.0.46'
                     }
                 }
             }
@@ -21,8 +21,8 @@ pipeline{
             steps{
                 script{
                     sshagent(['ssh']) {
-                        sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.12.235'
-                        sh 'scp /var/lib/jenkins/workspace/p5/* ec2-user@172.31.12.235:/home/ec2-user/'
+                        sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.0.46'
+                        sh 'scp /var/lib/jenkins/workspace/p5/* ec2-user@172.31.0.46:/home/ec2-user/'
                     }
                 }
             }
@@ -31,9 +31,9 @@ pipeline{
             steps{
                 script{
                     sshagent(['ssh']) {
-                        sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.12.235'
-                        sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.12.235 cd /home/ec2-user/'
-                        sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.12.235 ansible-playbook ansible.yml'
+                        sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.0.46'
+                        sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.0.46 cd /home/ec2-user/'
+                        sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.0.46 ansible-playbook ansible.yml'
                     }
                 }
             }

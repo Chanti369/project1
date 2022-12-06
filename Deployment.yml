@@ -18,4 +18,4 @@ spec:
           imagePullPolicy: Always
           command: ["/usr/sbin/init"]
           ports:
-          - containerPort: 80
+          - containerPort: 8080
