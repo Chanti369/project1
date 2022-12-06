@@ -17,5 +17,15 @@ pipeline{
                 }
             }
         }
+        stage('copy files'){
+            steps{
+                script{
+                    sshagent(['ssh']) {
+                        sh 'ssh -o StrictHostKeyChecking=no ec2-user@172.31.7.147'
+                        sh 'scp /var/lib/jenkins/workspace/p5/* ec2-user@172.31.7.147:/home/ec2-user/'
+                    }
+                }
+            }
+        }
     }
 }
