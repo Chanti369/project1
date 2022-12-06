@@ -14,8 +14,7 @@ spec:
       spec:
        containers:
         - name: mrdevops
-          image: 7995323158/yummy
+          image: jenkins/jenkins
           imagePullPolicy: Always
-          command: ["/usr/sbin/init"]
           ports:
           - containerPort: 8080
