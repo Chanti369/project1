@@ -3,8 +3,10 @@
   connection: ssh
   tasks: 
      - name: copy files
-       copy: src=/home/ec2-user/* dest=/opt
+       copy: src=/home/ec2-user/Deployment.yml dest=/opt
+     - name: copy
+       copy: src=/home/ec2-user/Service.yml dest=/opt  
      - name: start objects
-       command: kubectl apply -f Deployment.yml
+       command: kubectl apply -f /opt/Deployment.yml
      - name: start object
-       command: kubectl apply -f Service.yml    
+       command: kubectl apply -f /opt/Service.yml    
